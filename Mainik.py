@@ -18,7 +18,7 @@ async def callbecker(message: Message):
     await message.answer('Генерирую ответ...')
     text_to_voice(create_response(message.text), 1)
     audio = FSInputFile('output.mp3')
-    await bot.send_audio(message.chat.id, audio, title="<i>Ответ</i>", parse_mode='HTML', caption='Нейросеть')
+    await bot.send_audio(message.chat.id, audio, title="Ответ")
            
 async def main():
     await bot.delete_webhook(drop_pending_updates=True)
